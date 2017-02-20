@@ -18,7 +18,6 @@
 				Duart Breedt u15054692\\
 				Jordan Daubinet u15260870\\
 				Marthinus Hermann u15081479\\
-				Kgabo Moloto u13083865\\
 				Rikard Schouwstra u15012299\\
 				Jacques Smulders u15003087\\
 				Mandla Mhlongo u29630135\
@@ -60,6 +59,347 @@ Users will be allowed to contribute to the crowdsourcing nature of NavUP by bein
 	\subsection{Assumptions and Dependencies}
 	\section{Specific Requirements}
 	\subsection{Functional requirements}
+		\begin{enumerate}
+		  	\item Navigation	
+		  	
+			\begin{itemize}
+			
+				\item Create route to valid location
+				\begin{itemize}
+					\item Use a valid location as well as the user’s current location to find the fastest path to said location. Needs to consider valid traversable paths, shortest path, and traffic congestion as variables.
+					\item Preconditions
+					\begin{itemize}
+						\item User must be connected to the Wi-Fi
+						\item User must be higher than guest status
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item A route will be generated and displayed graphically 
+						\item Directions will be supplied
+					\end{itemize}
+				\end{itemize}
+				
+				\item Save routes
+				\begin{itemize}
+					\item Save the routes to the user’s collection for convenience and easy access.
+					\item Preconditions
+					\begin{itemize}
+						\item User must be logged in
+						\item Route must be generated
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item A new entry in the user’s saved route collection will be made
+					\end{itemize}
+				\end{itemize}
+				
+				\item Heat maps
+				\begin{itemize}
+					\item Use statistics and analytical data to generate heat maps of traffic concentration overtime to help users make navigational decisions.
+					\item Preconditions
+					\begin{itemize}
+						\item Locations of users must be sent to the system to determine density of crowds
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item A heat map indicating the amount of congestion on Hatfield campus will be returned to the user.
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}	
+			
+			\item Location management
+			\begin{itemize}
+				\item Current user location
+				\begin{itemize}
+					\item An accurate representation of the user’s current position must be displayed on the map. It should include the building and lecture hall said user is currently in. The user’s location should be accurate in order for crowd sourcing calculations to be accurate.
+					\item Preconditions
+					\begin{itemize}
+						\item User must be logged in and registered
+						\item User must be connected to the Wi-Fi
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item The location of the user is saved to the system 
+						\item User’s location is displayed on the user’s map.
+					\end{itemize}
+				\end{itemize}				
+				
+				\item Save locations
+				\begin{itemize}
+					\item To allow quick access to frequently visited locations the user must be allowed to save these locations to a collection.
+					\item Preconditions
+					\begin{itemize}
+						\item The location must be valid and selected
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item The location will be added to the user’s collection of saved locations
+					\end{itemize}
+				\end{itemize}
+				
+				\item Search for locations
+				\begin{itemize}
+					\item The user must be able to search for a building or lecture hall and be presented with an accurate result. The user must also be able to request a path be traced from his current location to the searched location
+					\item Preconditions
+					\begin{itemize}
+						\item Must be logged in and have queried the database
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item The location is returned to the user or a message indicating that it couldn’t found.
+					\end{itemize}
+				\end{itemize}
+				
+				\item Report protest action or emergency
+				\begin{itemize}
+					\item Use the notification system to create an event which concerns a specific group of users. For instance, informing all students who are registered for a specific module that a lecture is cancelled.
+					\item Preconditions
+					\begin{itemize}
+						\item Have to be either an admin or a staff user.
+						\item Have to be logged in
+						\item Access to a group of user’s information
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item Notifications are received by all concerned parties
+					\end{itemize}
+				\end{itemize}
+				
+				\item Create public event
+				\begin{itemize}
+					\item Create an event on the map concerning a specific group of users. This event could be a day house event. competition , or sale at a bookshop.
+					\item Preconditions
+					\begin{itemize}
+						\item Be authorized to create these events. Therefore be a staff or admin user.
+						\item Have to be logged in
+						\item Access to a group of user’s information
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item A new waypoint is added to the system.
+						\item This event is displayed on user’s maps.
+						\item Notifications are sent to the users
+					\end{itemize}
+				\end{itemize}
+				
+				\item View all locations
+				\begin{itemize}
+					\item Users must be able to accurately locate points of interests on the map such as restaurants, buildings, lecture halls, bathrooms.
+					\item Preconditions
+					\begin{itemize}
+						\item Have access to campus wi-fi
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item Locations are loaded onto the user’s mobile application
+					\end{itemize}
+				\end{itemize}
+				
+				\item Request addition, removal, or modification of locations
+				\begin{itemize}
+					\item Update the system database with location modification. 
+					\item Preconditions
+					\begin{itemize}
+						\item Have to be a staff or admin account
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item Location is updated on all user’s applications
+					\end{itemize}
+				\end{itemize}
+				
+			\end{itemize}
+			
+			\item User management
+			\begin{itemize}
+				\item Link with ClickUP Modules
+				\begin{itemize}
+					\item Lecture, practical, and tutorial schedules are synchronised with NavUP to help students with their timetable creation and ensure they are at venues on time.
+					\item Preconditions
+					\begin{itemize}
+						\item Have to be registered on NavUP
+						\item Have to be registered on ClickUP
+						\item Must be registered on ClickUP for specific modules
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item Venues have a list of lectures, practicals, and tutorials listed at specific times.
+					\end{itemize}
+				\end{itemize}
+				
+				\item Create and personalise class timetable to integrate into map
+				\begin{itemize}
+					\item Allow users to create a timetable in NavUP which notifies them when a class is starting, where it is, and a efficient route to travel.
+					\item Preconditions
+					\begin{itemize}
+						\item Enter modules, times and venues into the timetable manager
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item Generated weekly timetable and schedule
+					\end{itemize}
+				\end{itemize}
+				
+				\item Register as student, staff, or admin
+				\begin{itemize}
+					\item Use your University of Pretoria details to register on system in order to gain access to more of the applications features. Guest have limited access.
+					\item Preconditions
+					\begin{itemize}
+						\item Be a student/staff of UP. I.E. Have an account
+						\item Submit details on registration form
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item A personal account and profile is created for the user on the system
+					\end{itemize}
+				\end{itemize}
+				
+				\item Login
+				\begin{itemize}
+					\item Query user’s valid details on the system’s database through the login page to gain access to the account 
+					\item Preconditions
+					\begin{itemize}
+						\item Have to be registered on NavUP
+						\item Have to submit details on the login page
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item The user is redirected to their profile
+						\item Have access to registered user features
+					\end{itemize}
+				\end{itemize}
+				
+				\item Manage user accounts
+				\begin{itemize}
+					\item User management is necessary if a user experiences problems with their password or any account related issues. Additionally deregistered and graduated students as well users who abuse the system must be removed from the system.
+					\item Preconditions
+					\begin{itemize}
+						\item Have admin account and therefore rights
+						\item Have internet access
+						\item A management system in place
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item Users’ account related problems can be solved
+						\item Users can be removed from the system
+					\end{itemize}
+				\end{itemize}
+				
+			\end{itemize}
+			
+			\item Gamification 
+			\begin{itemize}
+				\item Challenges, badges, awards
+				\begin{itemize}
+					\item Give users challenges to complete and award them with points using an arbitrary points system. E.g. Overachiever: spent over 100 in the library. 
+					\item Preconditions
+					\begin{itemize}
+						\item Track user behaviour
+						\item Have a step counter feature
+						\item Be logged in to link activity to profile
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item Profile gains points
+						\item Position in leaderboard shifts
+					\end{itemize}
+				\end{itemize}
+				
+				\item Step counter
+				\begin{itemize}
+					\item Measure the distance a user has travelled. Use wi-fi hotspots and crowdsourcing to determine the distance travelled by the user.
+					\item Preconditions
+					\begin{itemize}
+						\item Be connected to the campus wi-fi
+						\item Be logged in
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item Distance travelled on user’s account will update accordingly
+					\end{itemize}
+				\end{itemize}
+				
+				\item View and contribute to leaderboards
+				\begin{itemize}
+					\item All users other than admins and guests should be on a leaderboard representing users with the most achievements or distance travelled. For anonymity users should be represented by usernames on the leaderboard.
+					\item Preconditions
+					\begin{itemize}
+						\item Users are registered
+						\item Users are logged
+						\item Connected to campus wi-fi
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item The system generates a universal leaderboard from all users
+					\end{itemize}
+				\end{itemize}
+				
+			\end{itemize}
+			
+			\item Personalisation
+			\begin{itemize}
+				\item Add profile information
+				\begin{itemize}
+					\item Allow users to add a summary and personal information. Also create provision for the use of a username for anonymity.
+					\item Preconditions
+					\begin{itemize}
+						\item Submit information to the server
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item Profile details will change as viewed by other users.
+					\end{itemize}
+				\end{itemize}
+				
+				\item Send friend requests
+				\begin{itemize}
+					\item Request to add another user to his/her friends list in order to view their profile.
+					\item Preconditions
+					\begin{itemize}
+						\item Send a request to the server which sends it to a user
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item A user receives a request to add another user to their friend list.
+					\end{itemize}
+				\end{itemize}
+				
+				\item Accept/deny friend request
+				\begin{itemize}
+					\item Allow users to accept or deny friend requests from other users
+Preconditions
+
+					\item Preconditions
+					\begin{itemize}
+						\item Receive a friend request
+						\item Accept it or deny it
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item Other user will be notified if the user accepts the friend request
+						\item Both user’s friend list will be updated
+					\end{itemize}
+				\end{itemize}
+				
+				\item View friend’s profile
+				\begin{itemize}
+					\item Allow two users who are on each other’s friend list to view each other’s profiles
+					\item Preconditions
+					\begin{itemize}
+						\item Be on each other’s friend list
+						\item Send a request to the system to view the profile
+					\end{itemize}
+					\item Postconditions
+					\begin{itemize}
+						\item The user is redirected to the other user’s profile if he has permission
+					\end{itemize}
+				\end{itemize}
+				
+			\end{itemize}
+			
+		  
+		\end{enumerate}
+		
 	\subsection{Performance Requirements}
 	- The system will be used by the students, guests and staff of up. If everyone uses the system then it should be able to handle +/- 50 000 users. \\
 	- The application should provide accurate locations in a constantly changing environment. Heat maps, user preferences and suggestions should have a response time of a few seconds.\\
