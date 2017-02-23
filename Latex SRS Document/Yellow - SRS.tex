@@ -30,13 +30,17 @@
 	\tableofcontents
 	\newpage
 	\section{Introduction}
-		We have been approached by the University of Pretoria to develop an application namely NavUP. This application should give personnel which are on the University of Pretoria Hatfield campus the ability to conveniently navigate around the campus through the use of a range of features, technologies, and gamification principles.
 		
 	\subsection{Purpose}
-		NavUP will provide students, staff, and guests with the ability to navigate from their current location to a desired location efficiently through the use of over 1000 Wi-Fi hotspots and crowd sourcing. This will allow personnel to avoid crowds and congestion between classes. The application will also give users access to features such as being notified of nearby events, profile management, and award based challenges among others.
+		The purpose of this document is to provide a detailed description of the requirements for the NavUP application. It will explain the purpose and features of the system, as well as system constraints.
+This document is intended to be proposed to University of Pretoria lecturers and software development companies in mind, as well as a reference for developing the first version of the NavUP system.
 		
 	\subsection{Scope}
-		NavUP will allow users to create routes from their current location to a desired location. They will also be able to save previous routes and locations for easy access. NavUP will have the ability to send notifications to appropriate parties to inform them of events, and activities around campus. Login and register option will be available for students and staff to which their personal data will be saved. NavUP will also have ClickUP integration and class schedule management and integration allowing users to ensure they can get to campus in a timely fashion. 
+		NavUP is a mobile application that provides personnel on the University of Pretoria’s Hatfield campus the ability to conveniently navigate around the campus through the use of a range of features, technologies, and gamification principles.
+
+NavUP will allow users to create optimal routes from their current location to a desired location. They will also be able to save previous routes and locations for easy access. NavUP will have the ability to send notifications to appropriate parties to inform them of achievements, events, and activities around campus. Login and register option will be available for students and staff to which their personal data will be saved.
+
+ NavUP will also include ClickUP integration, class schedule management, and integration allowing users to ensure they can get to campus in a timely fashion. 
 The real time nature of the crowdsourcing concept behind NavUP will make it accurate, responsive, and beneficial.
 Users will be allowed to contribute to the crowdsourcing nature of NavUP by being able to report events such as protest action, and long queues at entrance gates or restaurants.
 
@@ -47,18 +51,48 @@ Users will be allowed to contribute to the crowdsourcing nature of NavUP by bein
 
 		{\bfseries ClickUP} - A Blackboard Learn division dedicated to the University of Pretoria. It is a virtual learning environment and course management system developed by Blackboard Inc. It is Web-based server software which features course management, customizable open architecture, and scalable design that allows integration with student information systems and authentication protocols.
 		
+		{\bfseries User} - Someone who interacts with the NavUP application.
+
+		{\bfseries UP} - University of Pretoria
+		
+		{\bfseries Student} - A student enrolled at the University of Pretoria
+		
+		{\bfseries Staff} - A staff member of the University of Pretoria
+		
+		{\bfseries Admin} - System Administrator who is given specific permission to manage and control the application.
+
+		
 	\subsection{References}
 		Kung, D. (n.d.). Object-oriented software engineering. 1st ed.
 		
 	\subsection{Overview}
 		{\bfseries Describe the rest of the SRS and its structure/layout}
 	\section{Overall Description}	
+	- The following section will provide an overview of the whole NavUp application. The explanation of the application will inaugurate the basic functionality of it, as well as exhibiting how the application communicates with other systems. It will also describe the different types of collaborators that will make use of the application and also specify the different functionality that is available for each collaborator. At the end of this section we also present the constraints and assumptions that we've identified for the application. 
 	\subsection{Product Functions}
+	%With the NavUP application, users will be able to locate a venue on campus(including restrooms, cafes, bookshops etc) and determine the best possible route to the venue. The mobile version provides several search criteria enabling the administrator of the application to better manage the options for the different search criteria and provide accurate information according to that output. The results are displayed to the user screen in list view or map view(This could depend on the criteria included in the search). For buildings the list view will 
+	
 	\subsection{User Characteristics}
+	There are four types of users that will interact with the application namely: Visitors, Students, Staff and Admin. Each of these users have their own requirements and they all have different use for the application. A Visitor can only search for a venue. He/She will most probably be using their mobile device. They must be able to search, select their desired locating from the resultant search and navigate to it. If perhaps the Visitor knows more about his/her desired destination advanced searches could also be allowed where the Visitor can then enter multiple criteria in order for the results to be more refined.
+	
+	The UP Staff will typically use the Web application where they'll manage information about consultation times, availability etc. They could for example provide their contact information and other details they see fit.
+	
+	The Administrators are assumed to only interact with the Web application for the are responsible for managing the overall application ensuring that the information the application retrieve for the user is always correct and up to date.
 	\subsection{Constraints}
+	- A connection to campus WI-FI is a constraint for NavUP. Since the application needs to locate the position of the user with enough accuracy to navigate through buildings and locate individual lecture halls, a constant internet connection (specifically campus WI-Fi) is required during the duration of the user’s walk between venues.
+	- NavUP is also constrained by the level of accuracy required to navigate between locations within close proximity. Hence a comination of technologies needs to be implemented to meet this constraint.
+	- Since a large portion of user and system data will need to be stored in a database, the application is constrained by the capacity and efficiency of the database, as major traffic may queue incoming requests and hinder perforamance.
+	
 	\subsection{Assumptions and Dependencies}
+	One assumption about the application is that it will mostly be used on mobile phones that are Wifi compatible and have enough performance power to be able to use the application effectively. If your device does not have enough resources available for the application, it might not work as intended or might not work at all. It is assumed that the application will be opened with all other applications being closed. It is also assumed that the Wifi connection will be steady and consistent but off-line functionality could also be provided. It is also assumed that the GPS components in all devices work in a similar way.
 	\section{Specific Requirements}
 	\subsection{Functional requirements}
+
+	- Using NavUP, users will be able to search for a desired location. Depending on search criteria , the application will display the desired location on a map of campus, or generate an optimal route between the user's current and desired location. 
+	- Students and Staff will be able to create custom timetables that will generate optimal routes between locations automatically.
+	- Based on user interests, users can be notified of events (created by students and staff) happening on campus.
+	- Users will be able to view leaderboards and earn achievements through the use of NavUP. 
+
 		\begin{enumerate}
 		  	\item Navigation	
 		  	
@@ -105,6 +139,11 @@ Users will be allowed to contribute to the crowdsourcing nature of NavUP by bein
 						\item A heat map indicating the amount of congestion on Hatfield campus will be returned to the user.
 					\end{itemize}
 				\end{itemize}
+				\begin{figure}
+				    \includegraphics[width=\linewidth]{useCaseNavigation.png}
+				    \caption{use case Navigation.}
+  \label{fig:Navigation}
+				\end{figure}
 			\end{itemize}	
 			
 			\item Location management
@@ -207,7 +246,11 @@ Users will be allowed to contribute to the crowdsourcing nature of NavUP by bein
 						\item Location is updated on all user’s applications
 					\end{itemize}
 				\end{itemize}
-				
+				\begin{figure}
+                     \includegraphics[width=\linewidth]{useCaseLocation.png}
+                     \caption{use case Location.}
+  \label{fig:location1}
+			    \end{figure}
 			\end{itemize}
 			
 			\item User management
@@ -284,7 +327,11 @@ Users will be allowed to contribute to the crowdsourcing nature of NavUP by bein
 						\item Users can be removed from the system
 					\end{itemize}
 				\end{itemize}
-				
+				\begin{figure}
+				    \includegraphics[width=\linewidth]{useCaseUserManagement.png}
+				    \caption{use case User Management.}
+  \label{fig:userManagement}
+				\end{figure}
 			\end{itemize}
 			
 			\item Gamification 
@@ -333,7 +380,11 @@ Users will be allowed to contribute to the crowdsourcing nature of NavUP by bein
 						\item The system generates a universal leaderboard from all users
 					\end{itemize}
 				\end{itemize}
-				
+				\begin{figure}
+				    \includegraphics[width=\linewidth]{useCaseGamification.png}
+				    \caption{use case Gamification.}
+  \label{fig:gamification}
+				\end{figure}
 			\end{itemize}
 			
 			\item Personalisation
@@ -366,9 +417,8 @@ Users will be allowed to contribute to the crowdsourcing nature of NavUP by bein
 				
 				\item Accept/deny friend request
 				\begin{itemize}
-					\item Allow users to accept or deny friend requests from other users
-Preconditions
-
+					\item Allow users to accept or deny friend requests from other users 
+          
 					\item Preconditions
 					\begin{itemize}
 						\item Receive a friend request
@@ -394,7 +444,11 @@ Preconditions
 						\item The user is redirected to the other user’s profile if he has permission
 					\end{itemize}
 				\end{itemize}
-				
+				\begin{figure}
+				    \includegraphics[width=\linewidth]{useCasePersonalisation.png}
+				    \caption{use case personalisation.}
+  \label{fig:boat1}
+				\end{figure}
 			\end{itemize}
 			
 		  
@@ -403,16 +457,26 @@ Preconditions
 	\subsection{Performance Requirements}
 	- The system will be used by the students, guests and staff of up. If everyone uses the system then it should be able to handle +/- 50 000 users. \\
 	- The application should provide accurate locations in a constantly changing environment. Heat maps, user preferences and suggestions should have a response time of a few seconds.\\
-	- Maps of campus should be updated, to ensure accurate location estimation.
+	- Maps of campus should be updated, to ensure accurate location estimation. \\
+	- It should be able to handle +/- 50 000 users concurrently (simultaneously) when implemented into a suitable production environment. \\
+	- Offline activities should have a response time of +/- 0.1 seconds (instantaneous), while online activities such as calculating routes should have a response time of +/- 5.0 second so that the users have an uninterrupted experience. \\
+	- The application should be reliable, in that it will provide the fastest route every time without fail and complete all other computations successfully. 
 	\subsection{Design Constraints}
 	- The Nav UP application must be able to run on a cellphone which has limited process power and battery life. It thus has to be efficient and not drain battery life quickly. \\
 	- The application should not use a lot of bandwidth.\\
 	- The interface should be mobile compatible.\\
-	- Indoor navigation can only use wifi and not GPS.
+	- Indoor navigation can only use wifi and not GPS. \\
+	- The application should work on Android and iOS devices. \\
+	- The application should not work on mobile data, but only on wifi. \\
+	- The application should have an aesthetically pleasing and easy to use interface. 
 	\subsection{Software System Attributes}
 	- Users should have the option to withdraw all information gathered by the system.\\
 	- The system should be available online as well as offline.\\
-	- The system should stay updated, to ensure reliable information. For instance the maps of campuses should be updated regularly. 
+	- The system should stay updated, to ensure reliable information. For instance the maps of campuses should be updated regularly. \\
+	- The system should easily be updated, without complications. \\
+	- The system should be managed efficiently, checking for problems regularly. \\
+	- The system should be secure to prevent unauthorized modification or access of information. \\
+	- The system should be user-friendly, the application should meet the requirements of the user by providing good access for disabled users, and resulting in a good overall user experience.
 	\section{Appendixes}
 	\section{Index}
 
