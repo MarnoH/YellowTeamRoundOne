@@ -1,2 +1,10 @@
 *.pdf
 *.log
+*.epub
+*.mobi
+*.aux
+*.dvi
+*.lof
+*.out.ps
+*.toc
+*.sunctex.gz
